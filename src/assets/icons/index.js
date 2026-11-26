@@ -30,8 +30,20 @@ import brushing from './983545.svg'
 import books from './books.svg'
 import tree from './tree.svg'
 import portfolio from './portfolio.svg'
+import postgresql from './postgresql.svg'
+import supabase from './supabase.svg'
+import docker from './docker.svg'
+import figma from './figma.svg'
+import swagger from './swagger.svg'
+import postman from './postman.svg'
 
 export {
+    postgresql,
+    supabase,
+    docker,
+    figma,
+    swagger,
+    postman,
     css,
     express,
     git,
