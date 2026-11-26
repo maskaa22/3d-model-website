@@ -7,37 +7,49 @@ import CTA from '../components/CTA';
 const Projects = () => {
   return (
     <section className='max-container'>
+      <p className='eyebrow'>Portfolio</p>
       <h1 className='head-text'>My <span className='blue-gradient_text font-semibold drop-shadow'>Projects</span></h1>
 
-      <div className='mt-5 flex flex-col gap-3 text-slate-500'>
-        <p>I've embarked on numerous projects throughout the years, but these are
-        the ones I hold closest to my heart. Many of them are open-source, so if
-        you come across something that piques your interest, feel free to
-        explore the codebase and contribute your ideas for further enhancements.
-        Your collaboration is highly valued!</p>
+      <div className='mt-5 max-w-2xl text-slate-300 leading-relaxed'>
+        <p>Here are some of the projects I&apos;ve worked on: full-stack platforms, an educational app and
+        team-built websites.</p>
       </div>
-      <div className='flex flex-wrap my-20 gap-16'>
+
+      <div className='grid md:grid-cols-2 gap-8 mt-14 mb-16'>
         {projects.map((project) => (
-          <div className='lg:w-[400px] w-full' key={project.name}>
-            <div className='block-container w-12 h-12'>
+          <article key={project.name} className='glass-card glass-card-hover p-7 flex flex-col'>
+            <div className='block-container w-14 h-14'>
               <div className={`btn-back rounded-xl ${project.theme}`}/>
               <div className='btn-front rounded-xl flex justify-center items-center'>
-                <img src={project.iconUrl} alt='Project icon' className='w-1/2 h-1/2 object-contain'/>
+                <img src={project.iconUrl} alt='' className='w-1/2 h-1/2 object-contain'/>
               </div>
             </div>
-            <div className='mt-5 flex flex-col'>
-              <h4 className='text-2xl font-poppins font-semibold'>{project.name}</h4>
-              <p className='mt-2 text-slate-500'>{project.description}</p>
-              <div className='mt-5 flex items-center gap-2 font-poppins'>
-                <Link to={project.link} target='_blank' rel='noopener noreferrer' className='font-semibold text-blue-600'>Live Link</Link>
-                <img src={arrow} alt='arrow' className='w-4 h-4 object-contain'/>
+
+            <h4 className='mt-6 text-xl font-poppins font-semibold text-white'>{project.name}</h4>
+
+            {project.stack && (
+              <div className='mt-3 flex flex-wrap gap-2'>
+                {project.stack.split(' · ').map((tech) => (
+                  <span key={tech} className='tag'>{tech}</span>
+                ))}
               </div>
-            </div>
-          </div>
+            )}
+
+            <p className='mt-4 text-sm text-slate-300 leading-relaxed flex-1'>{project.description}</p>
+
+            {project.link ? (
+              <Link to={project.link} target='_blank' rel='noopener noreferrer'
+                className='mt-6 inline-flex items-center gap-2 font-poppins font-semibold text-cyan-300 hover:text-white transition-colors'>
+                Live Link
+                <img src={arrow} alt='' className='w-4 h-4 object-contain'/>
+              </Link>
+            ) : (
+              <p className='mt-6 text-sm text-slate-500'>Link coming soon</p>
+            )}
+          </article>
         ))}
       </div>
 
-      <hr className='border-slate-200'/>
       <CTA />
     </section>
   )

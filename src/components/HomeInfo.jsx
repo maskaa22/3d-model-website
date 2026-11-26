@@ -17,17 +17,17 @@ const renderContent = {
     <h1 className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5'>
      Hi, I am <span className='font-semibold'>Mariia</span> 
      <br/>
-    Junior Full Stack Developer.
+    Full-Stack Developer.
     </h1>
   ),
   2: (
-      <InfoBox text='Work with many companies bla bla bla' link={'/about'} btnText={'Learn more'}/>
+      <InfoBox text="2 years of experience building modern web apps with React, Next.js and Node.js." link={'/about'} btnText={'Learn more'}/>
   ),
   3: (
-    <InfoBox text='Led multiple project to success over the years. Curious about thr impact?' link={'/projects'} btnText={'Visit my portfolio'}/>
+    <InfoBox text="From pet wellbeing to e-commerce and learning apps. Curious to see what I've built?" link={'/projects'} btnText={'Visit my portfolio'}/>
   ),
   4: (
-    <InfoBox text='Nead a project done or looking for a dev? I`m just a few ketstrokes away' link={'/contact'} btnText={'Let`s talk'}/>
+    <InfoBox text="Need a project done or looking for a developer? I'm just a few keystrokes away." link={'/contact'} btnText={"Let's talk"}/>
   )
 }
 
